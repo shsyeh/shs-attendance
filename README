@@ -1,0 +1,41 @@
+# Opalstack Django README
+
+## Post-install steps
+
+Please take the following steps before you begin to use your Django
+installation:
+
+1. Connect your Django application to a site route in the control panel.
+
+2. Edit /home/skylinehs/apps/shs-attendance/myproject/myproject/settings.py to set ALLOWED_HOSTS
+   to include your site's domains. Example:
+
+       ALLOWED_HOSTS = ['domain.com', 'www.domain.com']
+
+3. Run the following commands to restart your Django instance:
+
+   /home/skylinehs/apps/shs-attendance/stop
+   /home/skylinehs/apps/shs-attendance/start
+
+## Using your own project
+
+If you want to serve your own Django project from this instance:
+
+1. Upload your project directory to /home/skylinehs/apps/shs-attendance
+
+2. Activate the app's environment:
+
+       source /home/skylinehs/apps/shs-attendance/env/bin/activate
+
+3. Install your project's Python dependencies with pip.
+
+4. Edit /home/skylinehs/apps/shs-attendance/uwsgi.ini to point `wsgi-file` and `touch-reload` at your project's WSGI handler
+
+5. Run the following commands to restart your Django instance:
+
+   /home/skylinehs/apps/shs-attendance/stop
+   /home/skylinehs/apps/shs-attendance/start
+
+## More info
+
+See https://docs.opalstack.com/topic-guides/django/ for more information.
